@@ -1,2 +1,9 @@
 # graphs-and-networks
-HS Fulda, Modul Graphen &amp; Netzwerke
+Hochschule Fulda
+Modul: Graphen &amp; Netzwerke
+
+
+##Algorithmen
+- Topsort (topologische Sortierung)
+- Kruskal
+- Dijkstra
