@@ -11,7 +11,7 @@ import graph.Adjazenzmatrix;
 //import graph.Kante;
 import graph.Kantenliste;
 
-/*GITHUB a*/
+
 /*Main the program / algorithmus you want. Please note, that there are some changes needed*/
 
 public class Main {
