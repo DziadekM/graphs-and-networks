@@ -11,13 +11,13 @@ public class Kante {
 	private int endknoten;
 	private int weight;
 	
-	//Konstruktur: wenn Kante nur Main- und Endknoten hat
+	//Konstruktur: wenn Kante nur Start- und Endknoten hat
 	public Kante(int startknoten, int endknoten) {
 		this.setStartknoten(startknoten);
 		this.setEndknoten(endknoten);
 	}
 	
-	//Konstruktur: wenn Kante Main- und Endknoten und ein Gewicht hat
+	//Konstruktur: wenn Kante Start- und Endknoten und ein Gewicht hat
 	public Kante(int startknoten, int endknoten, int weight) {
 		this.setStartknoten(startknoten);
 		this.setEndknoten(endknoten);
