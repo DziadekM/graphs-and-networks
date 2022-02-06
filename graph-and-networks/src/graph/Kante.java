@@ -63,7 +63,7 @@ public class Kante {
 		1 3 0
 		1 4 0*/
 	public void printKante() {
-		System.out.println("printKante "+this.startknoten + " " + this.endknoten + " " + this.weight);
+		System.out.println(this.startknoten + " " + this.endknoten + " " + this.weight);
 	}
 	
 }

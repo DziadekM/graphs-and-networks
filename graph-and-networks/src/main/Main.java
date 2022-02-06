@@ -25,7 +25,7 @@ public class Main {
 
 		//Topsort sort = null;
 		//Kantenlisten-Objekt anlegen & eingelesene Werte darin speichern
-		Kantenliste k = InputReader.readFile("spider");
+		//Kantenliste k = InputReader.readFile("spider");
 		//Adjazenzliste ali = Adjazenzliste.kantenlisteToAdjazenzliste(k);
 		//Topsort algo benötigt die Adjazenzliste
 		//sort.topsort(ali);
@@ -36,8 +36,8 @@ public class Main {
 		/*###################################################################################*/
 		/*KRUSKAL ALGO
 		 * the following is needed, if you want to run the Kruskal Algo program*/
-		//Kantenliste k = InputReader.readFile("primkruskal");
-		//Kruskal.Kruskalalgorithmus(k);
+		Kantenliste k = InputReader.readFile("primkruskal");
+		Kruskal.Kruskalalgorithmus(k);
 		/*###################################################################################*/
 		
 		/*###################################################################################*/
@@ -52,8 +52,8 @@ public class Main {
 		
 		/*###################################################################################*/
 		/*DOT-Format*/
-		Dotformat dot = null;
-		dot.kantenlisteToDotformat(k, "spider");
+		//Dotformat dot = null;
+		//dot.kantenlisteToDotformat(k, "spider");
 		/*###################################################################################*/
 
 	}//END main

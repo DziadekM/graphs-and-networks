@@ -7,7 +7,8 @@ import graph.Kantenliste;
 
 
 public class Kruskal {
-	
+	public static final String ANSI_CYAN = "\u001B[36m";
+	public static final String ANSI_GREEN = "\u001B[32m";
 	public static void Kruskalalgorithmus(Kantenliste k) {
 		//Knotenanzahl von der Kantenliste holen & in variable speichern
 		System.out.println("Knotenanzahl: "+ k.getKnotenanzahl());
@@ -24,6 +25,8 @@ public class Kruskal {
 		
 		
 		//geordnete Liste nach geringsten Gewicht auf der Konsole ausgeben
+		System.out.println("Geordnete Kantenliste: ");
+		System.out.println("S E G");
 		for(Kante kante:kantenListe) {
 			kante.printKante();
 		}
@@ -32,47 +35,57 @@ public class Kruskal {
 		List<Kante> mst = new ArrayList();
 		
 		//neue Teilmenge anlegen
-		Teilmenge tlm = new Teilmenge();
+		Teilmenge teilmenge = new Teilmenge();
 		
 		//für die Teilmenge ein Set über die Anzahl der Knoten erstellen
-		tlm.makeset(knotenanzahl);
-		tlm.printTeilmenge();
+		teilmenge.makeset(knotenanzahl);
+	
 		
 		int index = 0;
 		
-		//solange das Set noch nicht voll ist => iterieren
+		/*Baum: V-1 = Anzahl der Kanten 
+		 * while-Schleife abbrechen, wenn mst ArrayList mit v-1 Kanten gefüllt ist
+		 * */
 		while(mst.size()!= knotenanzahl-1) {
 			
 			/*nächste Kante mit geringsten Gewicht einlesen 
 			 * (Liste ist ja bereits schon nach Gewicht sortiert, d.h. die nächste Kante ist
 			 * automatisch die mit dem nächst größeren Gewicht)*/
 			
-			Kante nextk = kantenListe.get(index++);
+			Kante nextKante = kantenListe.get(index++);
+	
 			
 			
-			
-			int startknoten = tlm.find(nextk.getStartknoten());
-			//System.out.println("Startknoten aus Teilmenge "+startknoten);
-			int endknoten = tlm.find(nextk.getEndknoten());
-			//System.out.println("Endknoten aus Teilmenge "+endknoten);
+			/*Start- und Endknoten der Kante suchen*/
+			int startknoten = teilmenge.find(nextKante.getStartknoten());
+			int endknoten = teilmenge.find(nextKante.getEndknoten());
+		
 			
 			if(startknoten!=endknoten) {
 				//Kante zum minimalen spanning tree hinzufügen
-				mst.add(nextk);
+				mst.add(nextKante);
 				
 				//Start- und Endknoten miteinander vereinigen => 1 4 zu 14
-				tlm.union(startknoten, endknoten);
+				teilmenge.union(startknoten, endknoten);
 				
 			}
 			else {
-				System.out.println("ACHTUNG Zyklus entstanden! " + nextk.getStartknoten() + " " + nextk.getEndknoten());
+				System.out.println(ANSI_CYAN+"ACHTUNG Zyklus entstanden! Knoten: " + nextKante.getStartknoten() + " " + nextKante.getEndknoten());
 			}
 		}
 		
 		/* minimalen Spannbaum auf Konsole ausgeben*/
+		int weightSum = 0;
+		System.out.println(ANSI_GREEN+"-----------OUTPUT MINIMAL SPANNING TREE-----------------------------");
+		System.out.println("S E G");
 		for(Kante kante: mst) {
 			kante.printKante();
+			weightSum = weightSum + kante.getWeight();
+			
 		}
+		//aufsummierte Kosten ausgeben
+		System.out.println(ANSI_GREEN+"errechnete Kosten (mst): " + weightSum);
+		
 	}
 
 }
