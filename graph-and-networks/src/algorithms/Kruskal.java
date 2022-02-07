@@ -9,9 +9,12 @@ import graph.Kantenliste;
 public class Kruskal {
 	public static final String ANSI_CYAN = "\u001B[36m";
 	public static final String ANSI_GREEN = "\u001B[32m";
+	
+	
+	
 	public static void Kruskalalgorithmus(Kantenliste k) {
 		//Knotenanzahl von der Kantenliste holen & in variable speichern
-		System.out.println("Knotenanzahl: "+ k.getKnotenanzahl());
+		//System.out.println("Knotenanzahl: "+ k.getKnotenanzahl());
 		int knotenanzahl = k.getKnotenanzahl();
 		
 		//alle Kanten von der Kantenliste in ein Kanten ArrayList speichern
@@ -33,6 +36,7 @@ public class Kruskal {
 		
 		//Liste für die minimalen Spanning trees anlegen
 		List<Kante> mst = new ArrayList();
+		
 		
 		//neue Teilmenge anlegen
 		Teilmenge teilmenge = new Teilmenge();

@@ -23,12 +23,12 @@ public class Main {
 		/*TOPSORT ALGO
 		 * The following is needed, if you want to run the Topsort Algo program*/
 
-		//Topsort sort = null;
+		Topsort sort = null;
 		//Kantenlisten-Objekt anlegen & eingelesene Werte darin speichern
-		//Kantenliste k = InputReader.readFile("spider");
-		//Adjazenzliste ali = Adjazenzliste.kantenlisteToAdjazenzliste(k);
+		Kantenliste k = InputReader.readFile("k5ali");
+		Adjazenzliste ali = Adjazenzliste.kantenlisteToAdjazenzliste(k);
 		//Topsort algo benötigt die Adjazenzliste
-		//sort.topsort(ali);
+		sort.topsort(ali);
 		
 		
 		/*###################################################################################*/
@@ -36,14 +36,14 @@ public class Main {
 		/*###################################################################################*/
 		/*KRUSKAL ALGO
 		 * the following is needed, if you want to run the Kruskal Algo program*/
-		Kantenliste k = InputReader.readFile("primkruskal");
-		Kruskal.Kruskalalgorithmus(k);
+		//Kantenliste k = InputReader.readFile("primkruskal");
+		//Kruskal.Kruskalalgorithmus(k);
 		/*###################################################################################*/
 		
 		/*###################################################################################*/
 		/*DIJKSTRA ALGO
 		 * The following is needed, if you want to run the Kruskal Algo program*/
-		//Kantenliste k = InputReader.readFile("k5");
+		//Kantenliste k = InputReader.readFile("dijkstra");
 		//Adjazenzmatrix ad = Adjazenzmatrix.kantenlisteToAdjazenzmatrix(k);
 		//Dijkstra d = new Dijkstra();
 		//d.dijkstraalgorithmus(ad, 1);
@@ -53,7 +53,8 @@ public class Main {
 		/*###################################################################################*/
 		/*DOT-Format*/
 		//Dotformat dot = null;
-		//dot.kantenlisteToDotformat(k, "spider");
+		//dot.kantenlisteToDotformat(k, "dijkstra");
+		
 		/*###################################################################################*/
 
 	}//END main

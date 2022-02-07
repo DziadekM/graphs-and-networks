@@ -6,13 +6,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
 
-import graph.Adjazenzliste;
-import graph.Adjazenzmatrix;
+
 import graph.Kantenliste;
 
 
 public class Dotformat {
 
+	//gegebene Kantenliste in das Dotformat umwandeln
 	public static void kantenlisteToDotformat(Kantenliste k, String name) {
 		newFile(name);
 		try {
@@ -50,96 +50,18 @@ public class Dotformat {
 		}
 	}
 	
-	public static void adjazenzmatrixToDotformat(Adjazenzmatrix adj, String name) {
-		newFile(name);
-		try {
-			BufferedWriter myWriter = new BufferedWriter(new FileWriter("output/" + name + ".dot"));
-			if(!adj.isGewichtet()) {
-				myWriter.write("graph{");
-				myWriter.newLine();
-				for(int i=0; i<adj.getAdjazenzmatrix().length; i++) {
-					for(int j=0; j<adj.getAdjazenzmatrix().length; j++) {
-						if(adj.getAdjazenzmatrix()[i][j]==1) {
-							myWriter.write(Integer.toString(i+1));
-							myWriter.write(" -- ");
-							myWriter.write(Integer.toString(j+1));
-							myWriter.newLine();
-						}
-					}
-				}
-			} else {
-				myWriter.write("graph{");
-				myWriter.newLine();
-				for(int i=0; i<adj.getAdjazenzmatrix().length; i++) {
-					for(int j=0; j<adj.getAdjazenzmatrix().length; j++) {
-						if(adj.getAdjazenzmatrix()[i][j]!=0) {
-							myWriter.write(Integer.toString(i+1));
-							myWriter.write(" -- ");
-							myWriter.write(Integer.toString(j+1));
-							myWriter.write(" [label=");
-							myWriter.write(Integer.toString(adj.getAdjazenzmatrix()[i][j]));
-							myWriter.write("]");
-							myWriter.newLine();
-						}
-					}
-				}
-			}
-			myWriter.write("}");
-			myWriter.close();
-			System.out.println("Successfully generated the dot file.");
-		} catch (IOException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
-		}
-	}
 	
-	public static void adjazenzlisteToDotformat(Adjazenzliste ali, String name) {
-		newFile(name);
-		try {
-			BufferedWriter myWriter = new BufferedWriter(new FileWriter("output/" + name + ".dot"));
-			if(!ali.isGerichtet()) {
-			myWriter.write("graph{");
-			myWriter.newLine();
-			for(int i=0; i<ali.getAdjazenzliste().length; i++) {
-				for(int j = 0; j<ali.getAdjazenzliste()[i].size(); j++) {
-						myWriter.write(i+1);
-						myWriter.write(" -- ");
-						myWriter.write((Integer.toString(ali.getAdjazenzliste()[i].get(j))));
-						myWriter.newLine();
-					}
-				}
-			} else {
-				myWriter.write("graph{");
-				myWriter.newLine();
-				for(int i=0; i<ali.getAdjazenzliste().length; i++) {
-					for(int j = 0; j<ali.getAdjazenzliste()[i].size(); j++) {
-							myWriter.write(Integer.toString(i+1));
-							myWriter.write(" -- ");
-							myWriter.write((Integer.toString(ali.getAdjazenzliste()[i].get(j))));
-							myWriter.newLine();
-					}
-				}
-			}
-			myWriter.write("}");
-			myWriter.close();
-			System.out.println("Successfully generated the dot file.");
-		} catch (IOException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
-		}
-	}
-
-	
+	//neue Datei erzeugen & mit Namen der Datei im dot-Format speichern
 	public static void newFile(String name) {
 		try {
-			File myObj = new File("output/" + name + ".dot");
-			if (myObj.createNewFile()) {
-				System.out.println("File created: " + myObj.getName());
+			File myFile = new File("output/" + name + ".dot");
+			if (myFile.createNewFile()) {
+				System.out.println("File created: " + myFile.getName());
 			} else {
-				System.out.println("File already exists.");
+				System.out.println("File already exists in your folder.");
 			}
 		} catch (IOException e) {
-			System.out.println("An error occurred.");
+			System.out.println("An error occurred. Please check your program");
 			e.printStackTrace();
 		}
 	}

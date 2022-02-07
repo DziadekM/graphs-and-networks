@@ -58,7 +58,7 @@ public class Topsort {
 				
 				
 				//Jeder Knoten wird genau einmal in das Array Topsort geschrieben (Sortierung).
-				System.out.println("Indegrees Main "+Arrays.toString(indegrees));
+				System.out.println("Indegrees Start "+Arrays.toString(indegrees));
 				for(int l = 0; l<indegrees.length; l++) {
 					
 					//Wenn Queue leer wird, bevor alle Knoten eingetragen wurden, gibt es einen Zyklus!
