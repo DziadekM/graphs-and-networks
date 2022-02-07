@@ -20,8 +20,7 @@ public class Kruskal {
 		//alle Kanten von der Kantenliste in ein Kanten ArrayList speichern
 		//Kantenliste kommt in der Struktur: Startknoten - Gewicht - Endknoten
 		ArrayList<Kante> kantenListe = k.getKanten();
-		
-		
+			
 		
 		//Kantenliste nach weight sortieren
 		Collections.sort(kantenListe, Comparator.comparingInt(kante -> kante.getWeight()));
@@ -57,7 +56,8 @@ public class Kruskal {
 			 * automatisch die mit dem nächst größeren Gewicht)*/
 			
 			Kante nextKante = kantenListe.get(index++);
-	
+			
+			
 			
 			
 			/*Start- und Endknoten der Kante suchen*/
@@ -89,6 +89,8 @@ public class Kruskal {
 		}
 		//aufsummierte Kosten ausgeben
 		System.out.println(ANSI_GREEN+"errechnete Kosten (mst): " + weightSum);
+		System.out.println(ANSI_GREEN+"Kantenanzahl: " + mst.size());
+		
 		
 	}
 

@@ -23,12 +23,12 @@ public class Main {
 		/*TOPSORT ALGO
 		 * The following is needed, if you want to run the Topsort Algo program*/
 
-		Topsort sort = null;
+		//Topsort sort = null;
 		//Kantenlisten-Objekt anlegen & eingelesene Werte darin speichern
-		Kantenliste k = InputReader.readFile("k5ali");
-		Adjazenzliste ali = Adjazenzliste.kantenlisteToAdjazenzliste(k);
+		//Kantenliste k = InputReader.readFile("k5ali");
+		//Adjazenzliste ali = Adjazenzliste.kantenlisteToAdjazenzliste(k);
 		//Topsort algo benötigt die Adjazenzliste
-		sort.topsort(ali);
+		//sort.topsort(ali);
 		
 		
 		/*###################################################################################*/

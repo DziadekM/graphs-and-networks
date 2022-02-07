@@ -29,12 +29,14 @@ public class Dotformat {
 
 			}
 			else {
+				//directed graph
 				myWriter.write("digraph{");
 				myWriter.newLine();
 				for (int i = 0; i < k.size(); i++) {
 					myWriter.write(Integer.toString(k.getKanten().get(i).getStartknoten()));
 					myWriter.write(" -> ");
 					myWriter.write(Integer.toString(k.getKanten().get(i).getEndknoten()));
+					//Gewicht in Grafik abdrucken
 					myWriter.write(" [label=");
 					myWriter.write(Integer.toString(k.getKanten().get(i).getWeight()));
 					myWriter.write("]");
