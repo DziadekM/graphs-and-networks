@@ -39,7 +39,7 @@ public class Adjazenzmatrix {
 			
 			int startknoten = k.getKanten().get(i).getStartknoten()-1;
 			int endknoten = k.getKanten().get(i).getEndknoten()-1;
-			//ungerichtete Graphen
+			//ungewichtete Graphen
 			if(k.getKanten().get(i).getWeight()==0) {
 				adj.setGewichtet(false);
 				adj.getAdjazenzmatrix()[startknoten][endknoten]=1;
