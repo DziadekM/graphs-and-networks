@@ -41,7 +41,7 @@ public class Dijkstra {
 		
 		//Implementierung eines Hash-Sets, um die Menge der Knoten, die abgearbeitet wurden, darzustellen
 		menge = new LinkedHashSet<Integer>();
-		System.out.println(Arrays.deepToString(adjm));
+		//System.out.println(Arrays.deepToString(adjm));
 		
 		//Priority-Queue, die immer den Knoten mit der kleinsten Distanz vorne stehen hat
 		 pq = new PriorityQueue<Knoten>(new Comparator<Knoten>() {
